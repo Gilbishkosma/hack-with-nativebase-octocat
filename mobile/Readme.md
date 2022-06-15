@@ -1,9 +1,6 @@
-# expo-template-native-base
-
-The official NativeBase template for [Expo](https://docs.expo.io/)
-
-## Usage
-
-```sh
-expo init my-app --template expo-template-native-base
-```
+## To Start
+  For Android :  `` npm run android ``
+  
+  For IOS: `` npm run ios ``
+  
+  For WEB: `` npm run web ``
