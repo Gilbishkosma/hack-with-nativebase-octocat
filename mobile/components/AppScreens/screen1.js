@@ -89,7 +89,6 @@ const Screen1 = () => {
           keyExtractor={(item) => item.id}
         />
       </Box>
-      <Text>hloo</Text>
     </Box>
   );
 };
