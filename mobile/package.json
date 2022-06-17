@@ -19,6 +19,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
+    "babel-eslint": "^10.1.0",
     "expo": "~42.0.0",
     "expo-status-bar": "~1.0.4",
     "native-base": "3.2.1",
@@ -33,7 +34,13 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
+    "@babel/core": "^7.9.0",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "bugs": {
     "url": "https://github.com/GeekyAnts/nativebase-templates/issues"

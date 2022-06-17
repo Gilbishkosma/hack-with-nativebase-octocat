@@ -1,4 +1,4 @@
 module.exports = {
-  presets: ["@expo/next-adapter/babel"],
-  plugins: [["@babel/plugin-proposal-class-properties"]],
+  presets: ['@expo/next-adapter/babel'],
+  plugins: [['@babel/plugin-proposal-class-properties']],
 };
