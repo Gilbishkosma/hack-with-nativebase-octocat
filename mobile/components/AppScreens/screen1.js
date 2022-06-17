@@ -10,6 +10,9 @@ import {
   VStack,
   Spacer,
   SunIcon,
+  Pressable,
+  Button,
+  Progress,
 } from "native-base";
 
 const Screen1 = () => {
@@ -42,18 +45,15 @@ const Screen1 = () => {
     },
   ];
   return (
-    <Box bg="violet.50" height="full">
+    <Box bg="violet.50" height="full" alignContent="center">
       <Box bg="white" p="5">
         <FlatList
           data={data}
           renderItem={({ item }) => (
             <Box
-            //   borderBottomWidth="1"
               _dark={{
                 borderColor: "gray.600",
               }}
-            //   borderColor="coolGray.200"
-              //   pl="5"
               pr="5"
               py="2"
             >
@@ -88,6 +88,75 @@ const Screen1 = () => {
           )}
           keyExtractor={(item) => item.id}
         />
+      </Box>
+      {/* next component */}
+      <Box
+        bg="white"
+        py="4"
+        px="3"
+        borderRadius="5"
+        rounded="md"
+        width={358}
+        ml="auto"
+        mr="auto"
+        pl="4"
+        mt="5"
+        maxWidth="100%"
+        color="black"
+        // flex="center"
+      >
+        <HStack justifyContent="space-between">
+          <Box justifyContent="space-between" flex={0.95}>
+            <VStack space="2">
+              <HStack space="2">
+                <SunIcon />
+                <Text
+                  _dark={{
+                    color: "warmGray.50",
+                  }}
+                  color="coolGray.800"
+                  bold
+                  alignSelf="center"
+                >
+                  Storage
+                </Text>
+              </HStack>
+              {/* <HStack /> */}
+              <Progress
+                bg="coolGray.100"
+                _filledTrack={{
+                  bg: "violet.900",
+                }}
+                size="md"
+                mb={3}
+                value={55}
+              />
+            </VStack>
+            <Text
+              textTransform="uppercase"
+              fontSize="sm"
+              fontWeight="bold"
+              color="black"
+            >
+              4 gb of 15gb used
+            </Text>
+          </Box>
+          <Button
+            size="md"
+            // width={120}
+            // height={50}
+            mt="auto"
+            mb="auto"
+            variant="outline"
+            colorScheme="secondary"
+            borderColor="violet.900"
+            _text={{
+                color:"violet.900"
+            }}
+          >
+            Buy Storage
+          </Button>
+        </HStack>
       </Box>
     </Box>
   );
