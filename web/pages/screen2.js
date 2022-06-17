@@ -1,14 +1,16 @@
-import React from 'react'
-import {Text,Box} from 'native-base'
-import Navbar from '../components/Navbar'
+import React from 'react';
+import { Text, Box } from 'native-base';
+import Navbar from '../components/Navbar';
 
-const Screen2 = () => {
-    return <>
-    <Navbar />
-    <Box>
-    <Text>Screen 2</Text>
-    </Box>
-</>
+function Screen2() {
+  return (
+    <>
+      <Navbar />
+      <Box>
+        <Text>Screen 2</Text>
+      </Box>
+    </>
+  );
 }
 
-export default Screen2
+export default Screen2;

@@ -1,11 +1,12 @@
-import React from 'react'
-import {Text} from 'native-base'
+import React from 'react';
+import { Text } from 'native-base';
 
-
-const Screen1 = () => {
-    return <Text>
-        Screen 1
+function Screen1() {
+  return (
+    <Text>
+      Screen 1
     </Text>
+  );
 }
 
-export default Screen1
+export default Screen1;

@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import NextLink from 'next/link';
 import {
   Center,
   Text,
@@ -6,16 +7,16 @@ import {
   VStack,
   Button,
   Link,
-} from "native-base";
-import ColorModeSwitch from "../components/ColorModeSwitch";
+} from 'native-base';
+import ColorModeSwitch from '../components/ColorModeSwitch';
 
 // Start editing here, save and see your changes.
 export default function App() {
   return (
     <Center
       flex={1}
-      _dark={{ bg: "blueGray.900" }}
-      _light={{ bg: "blueGray.50" }}
+      _dark={{ bg: 'blueGray.900' }}
+      _light={{ bg: 'blueGray.50' }}
     >
       <VStack alignItems="center" space="md">
         <Heading>Welcome to our App</Heading>
@@ -29,15 +30,24 @@ export default function App() {
       <LinkButton path="screen3" title="Screen 3" />
       <LinkButton path="screen4" title="Screen 4" />
       <LinkButton path="screen5" title="Screen 5" />
+      <Button variant="outline" colorScheme="coolGray">
+        asd
+      </Button>
     </Center>
   );
 }
 
-
-const LinkButton = ({path,title}) => {
-  return  <Link mt="6" href={path}>
-  <Button variant="outline" colorScheme="coolGray">
-    {title}
-  </Button>
-</Link>
+function LinkButton({ path, title }) {
+  return (
+    <NextLink href={path} passHref>
+      <Link
+        mt="6"
+        _text={{
+          textDecoration: 'none',
+        }}
+      >
+        {title}
+      </Link>
+    </NextLink>
+  );
 }
