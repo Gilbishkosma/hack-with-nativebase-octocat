@@ -8,15 +8,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@expo/next-adapter": "^4.0.6",
+    "@expo/vector-icons": "^13.0.0",
     "@native-base/icons": "^0.0.11",
     "expo-font": "^10.0.3",
-    "native-base": "3.4.0",
+    "native-base": "^3.4.0",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-native": "^0.67.3",
-    "react-native-safe-area-context": "^4.1.2",
-    "react-native-svg": "^12.1.1",
+    "react-native": "^0.67.4",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-svg": "^12.3.0",
+    "react-native-vector-icons": "^9.1.0",
     "react-native-web": "^0.17.7",
     "react-native-web-linear-gradient": "^1.1.2"
   },

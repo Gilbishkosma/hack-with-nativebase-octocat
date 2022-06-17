@@ -1,11 +1,14 @@
 import React from 'react'
-import {Text} from 'native-base'
-
+import {Text,Box} from 'native-base'
+import Navbar from '../components/Navbar'
 
 const Screen2 = () => {
-    return <Text>
-        Screen 2
-    </Text>
+    return <>
+    <Navbar />
+    <Box>
+    <Text>Screen 2</Text>
+    </Box>
+</>
 }
 
 export default Screen2
