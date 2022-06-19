@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NativeBaseProvider, extendTheme } from 'native-base';
+import { NativeBaseProvider, extendTheme, theme as nbTheme } from 'native-base';
 
 // Define the config
 const config = {
@@ -8,7 +8,13 @@ const config = {
 };
 
 // extend the theme
-const customTheme = extendTheme({ config });
+const customTheme = extendTheme({
+  config,
+  colors: {
+    primary: nbTheme.colors.violet,
+    secondary: nbTheme.colors.coolGray,
+  },
+});
 
 function ClientOnly({ children }) {
   // earlier i was getting some responsiveness related issue

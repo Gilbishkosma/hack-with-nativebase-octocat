@@ -8,13 +8,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@expo/next-adapter": "^4.0.6",
+    "@expo/next-adapter": "4.0.5",
     "@expo/vector-icons": "^13.0.0",
     "@native-base/icons": "^0.0.11",
     "babel-eslint": "^10.1.0",
     "expo-font": "^10.0.3",
+    "expo-modules-core": "^0.9.2",
     "native-base": "^3.4.0",
-    "next": "12.0.4",
+    "next": "^12.1.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "^0.67.4",
@@ -22,10 +23,11 @@
     "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
     "react-native-web": "^0.17.7",
-    "react-native-web-linear-gradient": "^1.1.2"
+    "react-native-web-linear-gradient": "^1.1.2",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
-    "@native-base/next-adapter": "^1.1.9",
+    "@native-base/next-adapter": "^1.1.7",
     "babel-preset-expo": "^8.5.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",

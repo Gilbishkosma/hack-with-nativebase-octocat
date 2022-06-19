@@ -22,9 +22,12 @@ import {
   Ionicons,
 } from '@expo/vector-icons';
 import Image from 'next/image';
+import { useNavigateToHome } from '../hooks';
 
 function Navbar() {
   const { colorMode } = useColorMode();
+  const { handleNavigationToHome } = useNavigateToHome();
+
   return (
     <Box
       px={{
@@ -42,17 +45,17 @@ function Navbar() {
       borderBottomWidth={{
         md: '1',
       }}
-      borderColor="coolGray.200"
+      borderColor="secondary.200"
       _dark={{
-        bg: 'coolGray.900',
-        borderColor: 'coolGray.700',
+        bg: 'secondary.900',
+        borderColor: 'secondary.700',
       }}
       _light={{
         bg: {
           base: 'primary.900',
           md: 'white',
         },
-        borderColor: 'coolGray.200',
+        borderColor: 'secondary.200',
       }}
     >
       {/* Mobile header */}
@@ -64,14 +67,15 @@ function Navbar() {
               colorScheme="light"
               icon={(
                 <Icon
+                  onClick={handleNavigationToHome}
                   size="6"
                   as={AntDesign}
                   name="arrowleft"
-                  color="coolGray.50"
+                  color="secondary.50"
                 />
             )}
             />
-            <Text color="coolGray.50" fontSize="lg">
+            <Text color="secondary.50" fontSize="lg">
               Body Suit
             </Text>
           </HStack>
@@ -88,12 +92,13 @@ function Navbar() {
                 <Icon
                   size="6"
                   name="menu-sharp"
+                  onClick={handleNavigationToHome}
                   as={Ionicons}
                   _light={{
-                    color: 'coolGray.800',
+                    color: 'secondary.800',
                   }}
                   _dark={{
-                    color: 'coolGray.50',
+                    color: 'secondary.50',
                   }}
                 />
             )}
@@ -104,6 +109,7 @@ function Navbar() {
                 h="10"
                 w="56"
                 alt="NativeBase Startup+"
+                onClick={handleNavigationToHome}
                 src={require('../static/images/header_logo_light.png')}
               />
             ) : (
@@ -111,6 +117,7 @@ function Navbar() {
                 h="10"
                 w="56"
                 alt="NativeBase Startup+"
+                onClick={handleNavigationToHome}
                 src={require('../static/images/header_logo_dark.png')}
               />
             )}
@@ -128,10 +135,10 @@ function Navbar() {
                   name="search"
                   as={FontAwesome}
                   _light={{
-                    color: 'coolGray.400',
+                    color: 'secondary.400',
                   }}
                   _dark={{
-                    color: 'coolGray.100',
+                    color: 'secondary.100',
                   }}
                 />
             )}
@@ -143,10 +150,10 @@ function Navbar() {
                   <Icon
                     size="6"
                     _dark={{
-                      color: 'coolGray.50',
+                      color: 'secondary.50',
                     }}
                     _light={{
-                      color: 'coolGray.400',
+                      color: 'secondary.400',
                     }}
                     as={Entypo}
                     name="share"
@@ -160,10 +167,10 @@ function Navbar() {
                     name="heart"
                     as={EvilIcons}
                     _dark={{
-                      color: 'coolGray.50',
+                      color: 'secondary.50',
                     }}
                     _light={{
-                      color: 'coolGray.400',
+                      color: 'secondary.400',
                     }}
                   />
               )}
@@ -173,10 +180,10 @@ function Navbar() {
                   <Icon
                     size="6"
                     _dark={{
-                      color: 'coolGray.50',
+                      color: 'secondary.50',
                     }}
                     _light={{
-                      color: 'coolGray.400',
+                      color: 'secondary.400',
                     }}
                     as={Feather}
                     name="shopping-cart"
