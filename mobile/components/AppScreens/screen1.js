@@ -14,38 +14,84 @@ import {
   Button,
   Progress,
 } from "native-base";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 const Screen1 = () => {
   const data = [
     {
       id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-      fullName: "Aafreen Khan",
-      Icon: <SunIcon justifyContent="center" p="5" />,
+      fullName: "Change password",
+      Icon: (
+        <MaterialCommunityIcons
+          name="form-textbox-password"
+          size={40}
+          color="black"
+          p="6"
+        />
+      ),
     },
     {
       id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-      fullName: "Sujitha Mathur",
-      Icon: <SunIcon justifyContent="center" p="5" />,
+      fullName: "General",
+      Icon: (
+        <MaterialIcons name="account-balance" size={40} color="black" p="6" />
+      ),
     },
     {
       id: "58694a0f-3da1-471f-bd96-145571e29d72",
-      fullName: "Anci Barroco",
-      Icon: <SunIcon justifyContent="center" p="5" />,
+      fullName: "Manage Accounts",
+      Icon: (
+        <MaterialCommunityIcons
+          name="account-cog"
+          size={40}
+          color="black"
+          p="6"
+        />
+      ),
     },
     {
       id: "68694a0f-3da1-431f-bd56-142371e29d72",
-      fullName: "Aniket Kumar",
-      Icon: <SunIcon justifyContent="center" p="5" />,
+      fullName: "Language",
+      language: "English",
+      Icon: <Fontisto name="language" size={40} p="6" color="black" />,
     },
     {
       id: "28694a0f-3da1-471f-bd96-142456e29d72",
-      fullName: "Kiara",
-      language: "English",
-      Icon: <SunIcon justifyContent="center" p="5" />,
+      fullName: "Linked Accounts",
+      Icon: (
+        <MaterialCommunityIcons
+          name="target-account"
+          size={40}
+          color="black"
+          p="6"
+        />
+      ),
+    },
+    {
+      id: "28694a0f-3da1-471f-bd96-142456e29d72",
+      fullName: "Disable Accounts",
+      Icon: (
+        <MaterialCommunityIcons
+          name="account-off-outline"
+          size={40}
+          color="black"
+          p="6"
+        />
+      ),
     },
   ];
   return (
-    <Box bg="violet.50" height="full" alignContent="center">
+    <Box
+      bg="violet.50"
+      height="full"
+      alignContent="center"
+      fontFamily="SF Pro"
+      fontWeight={500}
+     
+    >
       <Box bg="white" p="5">
         <FlatList
           data={data}
@@ -68,6 +114,7 @@ const Screen1 = () => {
                     color="coolGray.800"
                     bold
                     alignSelf="center"
+                    
                   >
                     {item.fullName}
                   </Text>
@@ -108,8 +155,8 @@ const Screen1 = () => {
         <HStack justifyContent="space-between">
           <Box justifyContent="space-between" flex={0.95}>
             <VStack space="2">
-              <HStack space="2">
-                <SunIcon />
+              <HStack space="3">
+                <AntDesign name="cloudo" size={27} color="black" />
                 <Text
                   _dark={{
                     color: "warmGray.50",
@@ -151,7 +198,7 @@ const Screen1 = () => {
             colorScheme="secondary"
             borderColor="violet.900"
             _text={{
-                color:"violet.900"
+              color: "violet.900",
             }}
           >
             Buy Storage
