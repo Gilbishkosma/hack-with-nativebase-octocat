@@ -25,6 +25,7 @@ module.exports = {
     'global-require': 0,
     'react/no-unstable-nested-components': 0,
     'import/no-extraneous-dependencies': 0,
+    'import/prefer-default-export': 0,
   },
   parser: 'babel-eslint',
 };

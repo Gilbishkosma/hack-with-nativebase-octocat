@@ -38,7 +38,7 @@ function Home({ navigation }) {
 
 function LinkButton({ title, onClick }) {
   return (
-    <Button variant="outline" colorScheme="coolGray" onPress={onClick}>
+    <Button variant="outline" colorScheme="secondary" onPress={onClick}>
       {title}
     </Button>
   );
