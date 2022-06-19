@@ -17,6 +17,7 @@ function Home({ navigation }) {
       px={4}
       flex={1}
     >
+      <ColorModeSwitch />
       <VStack space={5} alignItems="center">
         <NativeBaseIcon />
         <Heading size="lg">Welcome to our App</Heading>
@@ -29,8 +30,6 @@ function Home({ navigation }) {
         <LinkButton title="Screen 3" onClick={() => navigation.navigate('Screen3')} />
         <LinkButton title="Screen 4" onClick={() => navigation.navigate('Screen4')} />
         <LinkButton title="Screen 5" onClick={() => navigation.navigate('Screen5')} />
-
-        <ColorModeSwitch />
       </VStack>
     </Center>
   );

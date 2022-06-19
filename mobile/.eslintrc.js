@@ -26,5 +26,6 @@ module.exports = {
     'react/no-unstable-nested-components': 0,
     'import/no-extraneous-dependencies': 0,
     'func-names': 0,
+    'import/prefer-default-export': 0,
   },
 };

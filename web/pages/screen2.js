@@ -13,11 +13,9 @@ import {
   Stack,
   Link,
   Hidden,
-  Center,
 } from 'native-base';
 import {
   AntDesign,
-  EvilIcons,
 } from '@expo/vector-icons';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
@@ -338,42 +336,7 @@ function Screen2() {
                         ))}
                       </Button.Group>
                     </ScrollView>
-                    <HStack
-                      mt="5"
-                      space="4"
-                      alignItems="center"
-                      display={{
-                        base: 'none',
-                        md: 'flex',
-                      }}
-                    >
-                      <Center
-                        p="2"
-                        borderRadius="4"
-                        _light={{
-                          bg: 'primary.50',
-                        }}
-                        _dark={{
-                          bg: 'secondary.700',
-                        }}
-                      >
-                        <Icon
-                          size="8"
-                          name="heart"
-                          as={EvilIcons}
-                          _dark={{
-                            bg: 'secondary.700',
-                            color: 'primary.500',
-                          }}
-                          _light={{
-                            bg: 'primary.50',
-                            color: 'primary.900',
-                          }}
-                        />
-                      </Center>
-                      <CTAButton title="Add to Cart" />
-                    </HStack>
-
+                    <CTAButton title="Add to Cart" base="none" md="flex" />
                     <HStack mt="8" space="5">
                       <Pressable
                         onPress={() => {
@@ -520,6 +483,7 @@ function Screen2() {
                         </VStack>
                       ))
                     )}
+                    <CTAButton title="Continue" base="flex" md="none" />
                   </Box>
                 </ScrollView>
               </Stack>
