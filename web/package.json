@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@expo/next-adapter": "4.0.5",
+    "@expo/next-adapter": "^4.0.5",
     "@expo/vector-icons": "^13.0.0",
     "@native-base/icons": "^0.0.11",
     "babel-eslint": "^10.1.0",
