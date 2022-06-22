@@ -10,7 +10,7 @@ export const screen1Data = [
     Icon: (
       <MaterialCommunityIcons
         name="form-textbox-password"
-        size={35}
+        size={25}
         p="6"
       />
     ),
@@ -19,7 +19,7 @@ export const screen1Data = [
     id: '2',
     fullName: 'General',
     Icon: (
-      <MaterialIcons name="account-balance" size={35} p="6" />
+      <MaterialIcons name="account-balance" size={25} p="6" />
     ),
   },
   {
@@ -28,7 +28,7 @@ export const screen1Data = [
     Icon: (
       <MaterialCommunityIcons
         name="account-cog"
-        size={35}
+        size={25}
         p="6"
       />
     ),
@@ -37,7 +37,7 @@ export const screen1Data = [
     id: '4',
     fullName: 'Language',
     language: 'English',
-    Icon: <Fontisto name="language" size={35} p="6" />,
+    Icon: <Fontisto name="language" size={25} p="6" />,
   },
   {
     id: '5',
@@ -45,7 +45,7 @@ export const screen1Data = [
     Icon: (
       <MaterialCommunityIcons
         name="target-account"
-        size={35}
+        size={25}
         p="6"
       />
     ),
@@ -56,7 +56,7 @@ export const screen1Data = [
     Icon: (
       <MaterialCommunityIcons
         name="account-off-outline"
-        size={35}
+        size={25}
         p="6"
       />
     ),

@@ -1,124 +1,33 @@
 import React from 'react';
 import {
   Text,
-
   Box,
-
   FlatList,
   HStack,
-
   VStack,
-  Spacer,
-
+  Icon,
   Button,
   Progress,
 } from 'native-base';
 import {
-  MaterialCommunityIcons, MaterialIcons, Fontisto, AntDesign,
+  AntDesign,
 } from '@expo/vector-icons';
+import { screen1Data } from '../../utils';
+import TextWithIcon from '../TextWithIcon';
 
 function Screen1() {
-  const data = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      fullName: 'Change password',
-      Icon: (
-        <MaterialCommunityIcons
-          name="form-textbox-password"
-          size={35}
-          color="#6b7280"
-          p="6"
-        />
-      ),
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      fullName: 'General',
-      Icon: (
-        <MaterialIcons name="account-balance" size={35} color="#6b7280" p="6" />
-      ),
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      fullName: 'Manage Accounts',
-      Icon: (
-        <MaterialCommunityIcons
-          name="account-cog"
-          size={35}
-          color="#6b7280"
-          p="6"
-        />
-      ),
-    },
-    {
-      id: '68694a0f-3da1-431f-bd56-142371e29d72',
-      fullName: 'Language',
-      language: 'English',
-      Icon: <Fontisto name="language" size={35} p="6" color="#6b7280" />,
-    },
-    {
-      id: '28694a0f-3da1-471f-bd96-142456e29d72',
-      fullName: 'Linked Accounts',
-      Icon: (
-        <MaterialCommunityIcons
-          name="target-account"
-          size={35}
-          color="#6b7280"
-          p="6"
-        />
-      ),
-    },
-    {
-      id: '28694a0f-3da1-471f-bd96-142456e29d72',
-      fullName: 'Disable Accounts',
-      Icon: (
-        <MaterialCommunityIcons
-          name="account-off-outline"
-          size={35}
-          color="#6b7280"
-          p="6"
-        />
-      ),
-    },
-  ];
   return (
     <Box
       bg="violet.50"
+      _dark={{ bg: 'secondary.700' }}
       height="full"
       alignContent="center"
-
     >
-      <Box bg="white" p="5">
+      <Box bg="white" _dark={{ bg: 'secondary.800' }} p="5">
         <FlatList
-          data={data}
+          data={screen1Data}
           renderItem={({ item }) => (
-            <Box
-              _dark={{
-                borderColor: 'gray.600',
-              }}
-              pr="5"
-              py="2"
-            >
-              <HStack space={3} justifyContent="space-between" alignItems="center">
-                {item.Icon}
-
-                <VStack p="3">
-                  <Text
-                    fontSize="md"
-                    color="coolGray.800"
-                  >
-                    {item.fullName}
-                  </Text>
-                </VStack>
-                <Spacer />
-                <Text
-                  fontSize="md"
-                  color="coolGray.500"
-                >
-                  {item.language}
-                </Text>
-              </HStack>
-            </Box>
+            <TextWithIcon key={item.fullName} Icon={item.Icon} title={item.fullName} />
           )}
           keyExtractor={(item) => item.id}
         />
@@ -126,6 +35,7 @@ function Screen1() {
       {/* next component */}
       <Box
         bg="white"
+        _dark={{ bg: 'secondary.800', color: 'white' }}
         py="4"
         px="3"
         borderRadius="5"
@@ -137,13 +47,12 @@ function Screen1() {
         mt="5"
         maxWidth="100%"
         color="black"
-        // flex="center"
       >
         <HStack justifyContent="space-between">
           <Box justifyContent="space-between" flex={0.95}>
             <VStack space="2">
               <HStack space="3">
-                <AntDesign name="cloudo" size={27} color="coolGray.500" />
+                <Icon as={AntDesign} name="cloudo" size={27} color="secondary.500" _dark={{ color: 'white' }} />
                 <Text
                   _dark={{
                     color: 'warmGray.50',
@@ -161,6 +70,11 @@ function Screen1() {
                 _filledTrack={{
                   bg: 'violet.900',
                 }}
+                _dark={{
+                  _filledTrack: {
+                    bg: 'primary.700',
+                  },
+                }}
                 size="md"
                 mb={3}
                 value={55}
@@ -171,6 +85,9 @@ function Screen1() {
               fontSize="sm"
               fontWeight="bold"
               color="coolGray.800"
+              _dark={{
+                color: 'white',
+              }}
             >
               4 gb of 15gb used
             </Text>
@@ -180,13 +97,24 @@ function Screen1() {
             mt="auto"
             mb="auto"
             variant="outline"
-            colorScheme="secondary"
-            borderColor="violet.800"
+            borderColor="primary.800"
             _text={{
-              color: 'violet.800',
+              color: 'primary.500',
+            }}
+            _dark={{
+              borderColor: 'secondary.400',
+              _text: {
+                color: 'secondary.400',
+              },
+            }}
+            _pressed={{
+              bg: 'secondary.600',
+              _light: {
+                bg: 'primary.100',
+              },
             }}
           >
-            Buy Storage
+            Buy Storase
           </Button>
         </HStack>
       </Box>

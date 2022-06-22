@@ -5,7 +5,6 @@ import {
   Text,
   Heading,
   VStack,
-  Button,
   Link,
 } from 'native-base';
 import ColorModeSwitch from '../components/ColorModeSwitch';

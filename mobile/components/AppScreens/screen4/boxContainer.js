@@ -3,7 +3,9 @@ import {
   Text, Box, VStack,
 } from 'native-base';
 
-function BoxContainer({ text1, text2, color }) {
+function BoxContainer({
+  amount, value, color, darkColor,
+}) {
   return (
     <Box
       borderWidth="1"
@@ -11,6 +13,9 @@ function BoxContainer({ text1, text2, color }) {
       width={170}
       p="3"
       rounded="lg"
+      _dark={{
+        borderColor: darkColor,
+      }}
     >
       <VStack
         space={2}
@@ -22,7 +27,7 @@ function BoxContainer({ text1, text2, color }) {
           color={color}
           textAlign="center"
         >
-          {text1}
+          {amount}
         </Text>
         <Text
           fontSize="xs"
@@ -30,7 +35,7 @@ function BoxContainer({ text1, text2, color }) {
           color={color}
           textAlign="center"
         >
-          {text2}
+          {value}
         </Text>
       </VStack>
     </Box>

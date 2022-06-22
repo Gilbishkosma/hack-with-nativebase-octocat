@@ -7,12 +7,22 @@ import BoxContainer from './boxContainer';
 
 function Screen4() {
   return (
-    <ScrollView>
+    <ScrollView bg="white" _dark={{ bg: 'secondary.800' }}>
       <HStack space={4} justifyContent="center" p="5">
-        <BoxContainer text1="$15303.00" text2="Total Invested" color="violet.800" />
-        <BoxContainer text1="$45303.00" text2="14% Return" color="emerald.800" />
+        <BoxContainer
+          amount="$15303.00"
+          value="Total Invested"
+          color="primary.800"
+          darkColor="primary.500"
+        />
+        <BoxContainer
+          amount="$45303.00"
+          value="14% Return"
+          color="emerald.800"
+          darkColor="emerald.500"
+        />
       </HStack>
-      <Heading size="lg" fontSize={16} p="2" pl="5">
+      <Heading size="lg" fontSize={16} px="2" mt="2" pl="5">
         Portfolio Details
       </Heading>
       <PortfolioBox />

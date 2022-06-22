@@ -14,10 +14,9 @@ import {
 import {
   AntDesign,
 } from '@expo/vector-icons';
-import { useNavigateToHome } from '../hooks';
 
 function ContentCard({ children, title, hideBG }) {
-  const { handleNavigationToHome } = useNavigateToHome();
+  const handleNavigationToHome = () => {};
 
   return (
     <ScrollView
