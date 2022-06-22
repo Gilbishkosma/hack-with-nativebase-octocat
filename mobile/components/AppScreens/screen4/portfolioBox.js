@@ -6,7 +6,7 @@ import {
 function PortfolioBox() {
   return (
     <Box
-      bg="coolGray.200"
+      bg="secondary.200"
       py="4"
       px="3"
       borderRadius="5"
@@ -19,6 +19,9 @@ function PortfolioBox() {
       maxWidth="100%"
       color="black"
       mb="0.5"
+      _dark={{
+        bg: 'secondary.700',
+      }}
     >
       <HStack>
         <Box justifyContent="space-between" width="full">
@@ -52,8 +55,11 @@ function PortfolioBox() {
               <Text
                 fontSize="lg"
                 fontWeight="medium"
-                color="coolGray.800"
+                color="secondary.800"
                 textAlign="center"
+                _dark={{
+                  color: 'white',
+                }}
               >
                 $50,000
               </Text>
@@ -63,7 +69,7 @@ function PortfolioBox() {
               <Text
                 fontSize="md"
                 fontWeight="medium"
-                color="coolGray.500"
+                color="secondary.500"
                 textAlign="center"
               >
                 Current Value
@@ -73,6 +79,9 @@ function PortfolioBox() {
                 fontWeight="medium"
                 color="coolGray.800"
                 textAlign="center"
+                _dark={{
+                  color: 'white',
+                }}
               >
                 $4,351.50
               </Text>
@@ -92,6 +101,9 @@ function PortfolioBox() {
                 fontWeight="medium"
                 color="emerald.600"
                 textAlign="center"
+                _dark={{
+                  color: 'emerald.400',
+                }}
               >
                 14%
               </Text>

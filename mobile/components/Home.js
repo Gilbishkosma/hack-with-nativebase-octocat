@@ -29,7 +29,6 @@ function Home({ navigation }) {
         <LinkButton title="Screen 2" onClick={() => navigation.navigate('Screen2')} />
         <LinkButton title="Screen 3" onClick={() => navigation.navigate('Screen3')} />
         <LinkButton title="Screen 4" onClick={() => navigation.navigate('Screen4')} />
-        <LinkButton title="Screen 5" onClick={() => navigation.navigate('Screen5')} />
       </VStack>
     </Center>
   );

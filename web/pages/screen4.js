@@ -46,16 +46,18 @@ function Screen4() {
             }}
           >
             <ContentCard title="Mututal Fund">
-              <HStack flexDirection="row" justifyContent="center" p="5">
+              <HStack flexDirection="row" justifyContent="center" p="5" space={4}>
                 <BoxContainer
-                  text1="$15303.00"
-                  text2="Total Invested"
-                  color="violet.800"
+                  amount="$15303.00"
+                  value="Total Invested"
+                  color="primary.800"
+                  darkColor="primary.500"
                 />
                 <BoxContainer
-                  text1="$45303.00"
-                  text2="14% Return"
+                  amount="$45303.00"
+                  value="14% Return"
                   color="emerald.800"
+                  darkColor="emerald.500"
                 />
               </HStack>
               <PortfolioBox />
