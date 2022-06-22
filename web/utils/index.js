@@ -192,3 +192,44 @@ export const screen4data = [{
   currentValue: '$4,351.50',
   returns: '14%',
 }];
+
+export const categories = [
+  {
+    category: 'New Born',
+  },
+  {
+    category: 'Tiny Baby',
+  },
+  {
+    category: '0-3 M',
+  },
+];
+export const reviews = [
+  {
+    id: 1,
+    imageUrl:
+      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    name: 'Laura Jones',
+    time: '12 May 2021',
+    review:
+      'I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.',
+  },
+  {
+    id: 2,
+    imageUrl:
+      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    name: 'Scarlet Jones',
+    time: '02 Jan 2021',
+    review:
+      'I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.',
+  },
+  {
+    id: 3,
+    imageUrl:
+      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    name: 'Max Awad',
+    time: '31 Aug 2021',
+    review:
+      'I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.',
+  },
+];

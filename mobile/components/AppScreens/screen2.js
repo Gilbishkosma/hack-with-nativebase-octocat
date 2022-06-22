@@ -5,7 +5,6 @@ import {
   Icon,
   Text,
   VStack,
-  Avatar,
   Image,
   ScrollView,
   Pressable,
@@ -13,53 +12,48 @@ import {
   Button,
   Stack,
   Link,
-  Hidden,
 } from 'native-base';
 import {
   AntDesign,
 } from '@expo/vector-icons';
 import CTAButton from '../CTAButton';
+import { categories, reviews } from '../../utils';
+import ReviewCard from '../ReviewCard';
 
-const categories = [
-  {
-    category: 'New Born',
-  },
-  {
-    category: 'Tiny Baby',
-  },
-  {
-    category: '0-3 M',
-  },
-];
-const reviews = [
-  {
-    id: 1,
-    imageUrl:
-      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    name: 'Laura Jones',
-    time: '12 May 2021',
-    review:
-      'I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.',
-  },
-  {
-    id: 2,
-    imageUrl:
-      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    name: 'Scarlet Jones',
-    time: '02 Jan 2021',
-    review:
-      'I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.',
-  },
-  {
-    id: 3,
-    imageUrl:
-      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    name: 'Max Awad',
-    time: '31 Aug 2021',
-    review:
-      'I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.',
-  },
-];
+function TabCard({ setTabName, title, tabName }) {
+  return (
+    <Pressable
+      onPress={() => {
+        setTabName(title);
+      }}
+    >
+      <Text
+        fontSize="16"
+        fontWeight="medium"
+        letterSpacing="0.4"
+        _light={{
+          color:
+          tabName === title
+            ? 'primary.900'
+            : 'secondary.400',
+        }}
+        _dark={{
+          color:
+          tabName === title
+            ? 'secondary.50'
+            : 'secondary.400',
+        }}
+      >
+        {title}
+      </Text>
+      {tabName === title && (
+      <Box width="100%" py="1">
+        <Divider bg="primary.900" />
+      </Box>
+      )}
+    </Pressable>
+  );
+}
 
 function Screen2() {
   const [tabName, setTabName] = React.useState('Description');
@@ -98,35 +92,6 @@ function Screen2() {
           }}
         >
           <VStack maxW="1016px" flex={1} width="100%">
-            <Hidden till="md">
-              <HStack mb="4" space={2}>
-                <Pressable>
-                  <Icon
-                    size="6"
-                    as={AntDesign}
-                    name="arrowleft"
-                    _light={{
-                      color: 'secondary.800',
-                    }}
-                    _dark={{
-                      color: 'secondary.50',
-                    }}
-                  />
-                </Pressable>
-                <Text
-                  fontSize="lg"
-                  _dark={{
-                    color: 'secondary.50',
-                  }}
-                  _light={{
-                    color: 'secondary.800',
-                  }}
-                >
-                  Body Suit
-                </Text>
-              </HStack>
-            </Hidden>
-
             <Stack
               flex={1}
               p={{
@@ -338,66 +303,8 @@ function Screen2() {
                   </ScrollView>
                   <CTAButton title="Add to Cart" base="none" md="flex" />
                   <HStack mt="8" space="5">
-                    <Pressable
-                      onPress={() => {
-                        setTabName('Description');
-                      }}
-                    >
-                      <Text
-                        fontSize="16"
-                        fontWeight="medium"
-                        letterSpacing="0.4"
-                        _light={{
-                          color:
-                              tabName === 'Description'
-                                ? 'primary.900'
-                                : 'secondary.400',
-                        }}
-                        _dark={{
-                          color:
-                              tabName === 'Description'
-                                ? 'secondary.50'
-                                : 'secondary.400',
-                        }}
-                      >
-                        Description
-                      </Text>
-                      {tabName === 'Description' && (
-                      <Box width="100%" py="1">
-                        <Divider bg="primary.900" />
-                      </Box>
-                      )}
-                    </Pressable>
-                    <Pressable
-                      onPress={() => {
-                        setTabName('Reviews');
-                      }}
-                    >
-                      <Text
-                        fontSize="16"
-                        fontWeight="medium"
-                        letterSpacing="0.4"
-                        _light={{
-                          color:
-                              tabName === 'Reviews'
-                                ? 'primary.900'
-                                : 'secondary.400',
-                        }}
-                        _dark={{
-                          color:
-                              tabName === 'Reviews'
-                                ? 'secondary.50'
-                                : 'secondary.400',
-                        }}
-                      >
-                        Reviews
-                      </Text>
-                      {tabName === 'Reviews' && (
-                      <Box width="100%" py="1">
-                        <Divider bg="primary.900" />
-                      </Box>
-                      )}
-                    </Pressable>
+                    <TabCard title="Description" tabName={tabName} setTabName={setTabName} />
+                    <TabCard title="Reviews" tabName={tabName} setTabName={setTabName} />
                   </HStack>
                   {tabName === 'Description' ? (
                     <Text
@@ -421,66 +328,7 @@ function Screen2() {
                     </Text>
                   ) : (
                     reviews.map((item) => (
-                      <VStack my="3" px="4" key={item.id}>
-                        <HStack justifyContent="space-between">
-                          <HStack space="3">
-                            <Avatar
-                              source={{
-                                uri: item.imageUrl,
-                              }}
-                              height="9"
-                              width="9"
-                            />
-                            <VStack space="1">
-                              <Text
-                                fontSize="sm"
-                                fontWeight="semibold"
-                                _dark={{
-                                  color: 'secondary.50',
-                                }}
-                                _light={{
-                                  color: 'secondary.800',
-                                }}
-                              >
-                                {item.name}
-                              </Text>
-                              <HStack space="1">
-                                <Icon
-                                  size="4"
-                                  name="star"
-                                  as={AntDesign}
-                                  color="amber.400"
-                                />
-                              </HStack>
-                            </VStack>
-                          </HStack>
-                          <Text
-                            fontSize="sm"
-                            _light={{
-                              color: 'secondary.500',
-                            }}
-                            _dark={{
-                              color: 'secondary.300',
-                            }}
-                          >
-                            {item.time}
-                          </Text>
-                        </HStack>
-                        <Text
-                          alignItems="center"
-                          lineHeight="lg"
-                          mt="4"
-                          _light={{
-                            color: 'secondary.500',
-                          }}
-                          _dark={{
-                            color: 'secondary.300',
-                          }}
-                          fontSize="md"
-                        >
-                          {item.review}
-                        </Text>
-                      </VStack>
+                      <ReviewCard {...item} key={item.id} />
                     ))
                   )}
                   <CTAButton title="Continue" base="flex" md="none" />
