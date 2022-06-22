@@ -12,6 +12,8 @@ import {
   Menu,
   Icon,
   useColorMode,
+  MoonIcon,
+  SunIcon,
 } from 'native-base';
 import {
   AntDesign,
@@ -25,7 +27,7 @@ import Image from 'next/image';
 import { useNavigateToHome } from '../hooks';
 
 function Navbar() {
-  const { colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const { handleNavigationToHome } = useNavigateToHome();
 
   return (
@@ -189,6 +191,12 @@ function Navbar() {
                     name="shopping-cart"
                   />
               )}
+              />
+
+              <IconButton
+                onPress={toggleColorMode}
+                icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+                accessibilityLabel="Color Mode Switch"
               />
             </HStack>
 

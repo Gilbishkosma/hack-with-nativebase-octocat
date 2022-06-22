@@ -29,10 +29,6 @@ export default function App() {
       <LinkButton path="screen2" title="Screen 2" />
       <LinkButton path="screen3" title="Screen 3" />
       <LinkButton path="screen4" title="Screen 4" />
-      <LinkButton path="screen5" title="Screen 5" />
-      <Button variant="outline" colorScheme="secondary">
-        asd
-      </Button>
     </Center>
   );
 }

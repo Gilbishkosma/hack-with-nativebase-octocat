@@ -3,18 +3,40 @@ import {
   Box,
   VStack,
   ScrollView,
-  Hidden,
-  HStack,
-  Pressable,
-  Icon,
   Text,
-  Stack,
+  Flex,
+  Image,
+  Spacer,
 } from 'native-base';
-import {
-  AntDesign,
-} from '@expo/vector-icons';
 import Navbar from '../components/Navbar';
 import SideBar from '../components/SideBar';
+import ContentCard from '../components/ContentCard';
+import OrderTimeLine from '../components/OrderTimeLine';
+
+const img = require('../static/images/cart.png');
+
+function ItemCard() {
+  return (
+    <Flex bg="secondary.100" _dark={{ bg: 'secondary.700' }} gap="4" borderRadius="sm" p="4" flexDirection="row">
+      <Box>
+        <Image
+          size="xl"
+          alt="Item pic"
+          borderRadius="sm"
+          source={{
+            uri: img.default.src,
+          }}
+        />
+      </Box>
+      <Box>
+        <Text color="black" _dark={{ color: 'white' }} fontWeight="bold" fontSize="xl">Sweater Dress</Text>
+        <Text color="secondary.400" fontWeight="bold" fontSize="sm">Girl Self Design</Text>
+        <Spacer />
+        <Text color="black" _dark={{ color: 'white' }} fontWeight="bold" fontSize="lg">₹1,199</Text>
+      </Box>
+    </Flex>
+  );
+}
 
 function Screen3() {
   return (
@@ -44,69 +66,19 @@ function Screen3() {
           }}
         >
           <SideBar />
-          <ScrollView
+          <Box
             flex={1}
-            p={{
-              md: 8,
-            }}
-            contentContainerStyle={{
-              alignItems: 'center',
-              flex: 1,
+            flexDirection={{
+              base: 'column',
+              md: 'row',
             }}
           >
-            <VStack maxW="1016px" flex={1} width="100%">
-              <Hidden till="md">
-                <HStack mb="4" space={2}>
-                  <Pressable>
-                    <Icon
-                      size="6"
-                      as={AntDesign}
-                      name="arrowleft"
-                      _light={{
-                        color: 'secondary.800',
-                      }}
-                      _dark={{
-                        color: 'secondary.50',
-                      }}
-                    />
-                  </Pressable>
-                  <Text
-                    fontSize="lg"
-                    _dark={{
-                      color: 'secondary.50',
-                    }}
-                    _light={{
-                      color: 'secondary.800',
-                    }}
-                  >
-                    Body Suit
-                  </Text>
-                </HStack>
-              </Hidden>
-              <Stack
-                flex={1}
-                p={{
-                  md: '8',
-                }}
-                _light={{
-                  bg: 'white',
-                }}
-                _dark={{
-                  borderColor: 'secondary.700',
-                  bg: 'secondary.800',
-                }}
-                borderWidth={1}
-                borderColor="#E5E7EB"
-                borderRadius={8}
-                direction={{
-                  base: 'column',
-                  md: 'row',
-                }}
-                space="6"
-              />
+            <ContentCard title="Track Order">
+              <ItemCard />
+              <OrderTimeLine />
+            </ContentCard>
+          </Box>
 
-            </VStack>
-          </ScrollView>
         </Box>
       </VStack>
     </>
