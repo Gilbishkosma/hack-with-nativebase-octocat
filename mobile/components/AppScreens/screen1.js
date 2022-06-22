@@ -114,7 +114,7 @@ function Screen1() {
               },
             }}
           >
-            Buy Storase
+            Buy Storage
           </Button>
         </HStack>
       </Box>
